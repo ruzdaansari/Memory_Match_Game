@@ -1,0 +1,91 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+.container {
+  width: 1000px;
+  height: 685px;
+  background-color: antiquewhite;
+  /* text-align: center; */
+}
+
+.btnWrapper {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.btnParent {
+  /* position: relative; */
+  width: 160px;
+  height: 160px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  cursor: pointer;
+  transform-origin: center;
+  border: 2px solid rgb(236, 51, 4);
+  border-radius: 10px;
+  /* margin: 20px; */
+  /* display: inline-block; */
+  background: none;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: inherit;
+  transform-origin: center;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.front img,
+.back img {
+  width: 90%;
+  height: 150px;
+  object-fit: contain;
+}
+
+.flip {
+  transform: rotateY(180deg);
+  cursor: default;
+  /* transition: tranform 1s ease-in-out; */
+}
+
+
+.btnWrapper.disabled {
+  cursor: default;
+  pointer-events: none;
+  /* opacity: 0.5; */
+}
+
+.resetButton {
+  font: inherit;
+  cursor: pointer;
+  background-color: #ffc404;
+  border: 1px solid #ffc404;
+  color: #1f1a09;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+.resetButton:hover,
+.resetButton:active {
+  background-color: #ffab04;
+  border-color: #ffab04;
+  color: #1f1a09;
+}
